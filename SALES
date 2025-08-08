@@ -1,0 +1,21 @@
+use sales;
+CREATE TABLE Sales (
+sale_id INT PRIMARY KEY,
+product_id INT,
+quantity_sold INT,
+sale_date DATE,
+total_price DECIMAL(10, 2)
+);
+INSERT INTO Sales VALUES (1, 101, 5, '2024-01-01', 2500.00);
+INSERT INTO Sales VALUES (2, 102, 3, '2024-01-02', 900.00);
+INSERT INTO Sales VALUES (3, 103, 2, '2024-01-02', 60.00);
+INSERT INTO Sales VALUES (4, 104, 4, '2024-01-03', 80.00);
+INSERT INTO Sales VALUES (5, 105, 6, '2024-01-03', 90.00);
+SELECT * FROM sales;
+SELECT sale_id, sale_date from sales;
+SELECT * FROM sales where total_price > 100; 
+SELECT sale_id, total_price from sales where sale_date = '2024-01-03';
+SELECT sum(total_price) as total_revenue from sales;
+SELECT sum(quantity_sold) as total_quantity from sales;
+SELECT sale_id,product_id,total_price from sales where quantity_sold > 4;
+SELECT avg(total_price) as avg_price from sales;
